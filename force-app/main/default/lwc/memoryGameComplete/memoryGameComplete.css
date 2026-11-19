@@ -1,0 +1,41 @@
+.complete {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.complete__best {
+    color: #2e844a;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+.complete__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+}
+
+.complete__stat dt {
+    font-size: 0.75rem;
+    color: #706e6b;
+    text-transform: uppercase;
+}
+
+.complete__stat dd {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.complete__breakdown {
+    margin: 0 auto 1.25rem;
+    max-width: 360px;
+}
+
+.complete__actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}

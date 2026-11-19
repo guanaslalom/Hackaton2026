@@ -1,0 +1,52 @@
+<template>
+    <div class="complete">
+        <template lwc:if={isCompleted}>
+            <h2 class="slds-text-heading_large">Game complete!</h2>
+            <template lwc:if={newBest}>
+                <p class="complete__best" role="status">New personal best!</p>
+            </template>
+        </template>
+        <template lwc:elseif={isAbandoned}>
+            <h2 class="slds-text-heading_large">Game over</h2>
+            <p class="complete__message">{result.message}</p>
+        </template>
+
+        <dl class="complete__stats">
+            <div class="complete__stat">
+                <dt>Time</dt>
+                <dd>{durationDisplay}</dd>
+            </div>
+            <div class="complete__stat">
+                <dt>Moves</dt>
+                <dd>{result.moves}</dd>
+            </div>
+            <div class="complete__stat">
+                <dt>Pairs matched</dt>
+                <dd>{result.matchedPairs}</dd>
+            </div>
+            <div class="complete__stat">
+                <dt>Final score</dt>
+                <dd>{finalScoreDisplay}</dd>
+            </div>
+        </dl>
+
+        <template lwc:if={isCompleted}>
+            <table class="slds-table slds-table_cell-buffer complete__breakdown">
+                <caption class="slds-assistive-text">Score breakdown</caption>
+                <tbody>
+                    <template for:each={scoreBreakdown} for:item="row">
+                        <tr key={row.key}>
+                            <th scope="row">{row.label}</th>
+                            <td class="slds-text-align_right">{row.value}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+        <div class="complete__actions">
+            <lightning-button label="Play again" variant="brand" onclick={handlePlayAgain}></lightning-button>
+            <lightning-button label="Return home" variant="neutral" onclick={handleHome}></lightning-button>
+        </div>
+    </div>
+</template>

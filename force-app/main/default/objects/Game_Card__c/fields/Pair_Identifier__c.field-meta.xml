@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pair_Identifier__c</fullName>
+    <description>Cards sharing the same identifier form a matching pair. Each identifier must have exactly two active cards.</description>
+    <label>Pair Identifier</label>
+    <length>50</length>
+    <type>Text</type>
+</CustomField>

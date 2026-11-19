@@ -1,0 +1,15 @@
+.memory-app {
+    position: relative;
+    min-height: 480px;
+    padding: 1rem;
+}
+
+.memory-app__busy {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}

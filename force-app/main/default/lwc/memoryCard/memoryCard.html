@@ -1,0 +1,21 @@
+<template>
+    <button
+        class={cardClass}
+        type="button"
+        aria-label={cardAriaLabel}
+        disabled={disabled}
+        onclick={handleClick}
+    >
+        <span class="memory-card__inner">
+            <span class="memory-card__face memory-card__back" aria-hidden="true">?</span>
+            <span class="memory-card__face memory-card__front">
+                <template lwc:if={hasImage}>
+                    <img class="memory-card__image" src={imageUrl} alt="" />
+                </template>
+                <template lwc:else>
+                    <span class="memory-card__symbol">{symbolText}</span>
+                </template>
+            </span>
+        </span>
+    </button>
+</template>

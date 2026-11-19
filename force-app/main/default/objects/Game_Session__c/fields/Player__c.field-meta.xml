@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Player__c</fullName>
+    <description>The portal user's Contact who played this session.</description>
+    <label>Player</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Memory Game Sessions</relationshipLabel>
+    <relationshipName>Memory_Game_Sessions</relationshipName>
+    <type>Lookup</type>
+</CustomField>

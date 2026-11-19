@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Move_Penalty__c</fullName>
+    <defaultValue>10</defaultValue>
+    <description>Points deducted per move beyond the number of pairs.</description>
+    <label>Move Penalty</label>
+    <precision>4</precision>
+    <scale>0</scale>
+    <type>Number</type>
+</CustomField>

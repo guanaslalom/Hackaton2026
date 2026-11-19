@@ -1,0 +1,46 @@
+<template>
+    <div class="memory-app">
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text="Loading game" size="medium"></lightning-spinner>
+        </template>
+
+        <template lwc:elseif={isHome}>
+            <c-memory-game-home
+                games={games}
+                selected-game-id={selectedGameId}
+                stats={stats}
+                onstart={handleStart}
+                onselectgame={handleSelectGame}
+                onleaderboard={handleLeaderboard}
+            ></c-memory-game-home>
+        </template>
+
+        <template lwc:elseif={isPlaying}>
+            <c-memory-game-board
+                board={board}
+                ongamefinished={handleGameFinished}
+                onrestart={handleRestart}
+                onexit={handleExit}
+            ></c-memory-game-board>
+        </template>
+
+        <template lwc:elseif={isComplete}>
+            <c-memory-game-complete
+                result={result}
+                previous-best={previousBest}
+                onplayagain={handlePlayAgain}
+                onhome={handleHome}
+            ></c-memory-game-complete>
+        </template>
+
+        <template lwc:elseif={isLeaderboard}>
+            <c-memory-leaderboard game-id={leaderboardGameId} onback={handleHome}></c-memory-leaderboard>
+        </template>
+
+        <template lwc:if={busy}>
+            <div class="memory-app__busy">
+                <lightning-spinner alternative-text="Working" size="medium"></lightning-spinner>
+            </div>
+        </template>
+    </div>
+</template>

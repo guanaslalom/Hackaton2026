@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Game__c</members>
+        <members>Game_Card__c</members>
+        <members>Game_Session__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Game__c</members>
+        <members>Game_Card__c</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+        <members>MemoryGameController</members>
+        <members>MemoryGameService</members>
+        <members>MemoryGameServiceTest</members>
+        <members>MemoryLeaderboardService</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>memoryCard</members>
+        <members>memoryGameApp</members>
+        <members>memoryGameBoard</members>
+        <members>memoryGameComplete</members>
+        <members>memoryGameEngine</members>
+        <members>memoryGameHome</members>
+        <members>memoryLeaderboard</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Memory_Game_Admin</members>
+        <members>Memory_Game_Player</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>68.0</version>
+</Package>

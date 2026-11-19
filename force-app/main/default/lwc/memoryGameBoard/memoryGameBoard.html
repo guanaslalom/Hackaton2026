@@ -1,0 +1,32 @@
+<template>
+    <template lwc:if={hasBoard}>
+        <div class="board">
+            <header class="board__header">
+                <h2 class="board__title slds-text-heading_medium">{board.gameName}</h2>
+                <div class="board__stats" aria-live="polite">
+                    <span class="board__stat">Time: <strong>{timerDisplay}</strong></span>
+                    <span class="board__stat">Moves: <strong>{moveCount}</strong></span>
+                    <span class="board__stat">Pairs: <strong>{matchedLabel}</strong></span>
+                </div>
+                <div class="board__actions">
+                    <lightning-button label="Restart" variant="neutral" disabled={isFinished} onclick={handleRestart}></lightning-button>
+                    <lightning-button label="Exit" variant="neutral" disabled={isFinished} onclick={handleExit}></lightning-button>
+                </div>
+            </header>
+            <div class="board__grid" role="group" aria-label="Memory cards">
+                <template for:each={cardViews} for:item="card">
+                    <c-memory-card
+                        key={card.key}
+                        position={card.position}
+                        card-class={card.cardClass}
+                        card-aria-label={card.cardAriaLabel}
+                        symbol-text={card.symbolText}
+                        image-url={card.imageUrl}
+                        disabled={card.disabled}
+                        oncardselect={handleCardSelect}
+                    ></c-memory-card>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>

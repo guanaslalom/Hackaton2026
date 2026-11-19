@@ -1,0 +1,51 @@
+<template>
+    <div class="home">
+        <h1 class="slds-text-heading_large home__title">Memory Matching Game</h1>
+
+        <template lwc:if={hasNoGames}>
+            <p class="home__empty">No games are available right now. Please check back later.</p>
+        </template>
+
+        <template lwc:else>
+            <template lwc:if={hasMultipleGames}>
+                <lightning-combobox
+                    label="Choose a game"
+                    value={selectedGameId}
+                    options={gameOptions}
+                    onchange={handleGameChange}
+                ></lightning-combobox>
+            </template>
+
+            <template lwc:if={hasSelectedGame}>
+                <section class="home__game">
+                    <h2 class="slds-text-heading_medium">{selectedGameView.name}</h2>
+                    <p class="home__meta">{selectedGameView.pairsLabel} · {selectedGameView.timeLabel}</p>
+                    <div class="home__how-to">
+                        <h3 class="slds-text-title_bold">How to play</h3>
+                        <p>{selectedGameView.description}</p>
+                    </div>
+
+                    <dl class="home__stats">
+                        <div class="home__stat">
+                            <dt>Games played</dt>
+                            <dd>{gamesPlayed}</dd>
+                        </div>
+                        <div class="home__stat">
+                            <dt>Games completed</dt>
+                            <dd>{gamesCompleted}</dd>
+                        </div>
+                        <div class="home__stat">
+                            <dt>Personal best</dt>
+                            <dd>{personalBestDisplay}</dd>
+                        </div>
+                    </dl>
+
+                    <div class="home__actions">
+                        <lightning-button label="Start game" variant="brand" onclick={handleStart}></lightning-button>
+                        <lightning-button label="Leaderboard" variant="neutral" onclick={handleLeaderboard}></lightning-button>
+                    </div>
+                </section>
+            </template>
+        </template>
+    </div>
+</template>
